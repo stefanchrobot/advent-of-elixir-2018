@@ -1,6 +1,6 @@
-defmodule Day1 do
+defmodule Day01 do
   def input do
-    content = File.read!("day1_input.txt")
+    content = File.read!("day01_input.txt")
     Enum.map(String.split(content), fn x -> String.to_integer(x) end)
   end
 

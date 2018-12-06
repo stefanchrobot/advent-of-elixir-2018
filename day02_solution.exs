@@ -1,6 +1,6 @@
-defmodule Day2 do
+defmodule Day02 do
   def input do
-    "day2_input.txt"
+    "day02_input.txt"
     |> File.read!()
     |> String.split()
   end

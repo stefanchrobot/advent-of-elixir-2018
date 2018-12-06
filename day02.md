@@ -122,8 +122,8 @@ list
 
 ## The puzzle
 
-- get your input and paste it into [`day2_input.txt`](day2_input.txt)
-- [`day2.exs`](day2.exs) has a pre-defined `input` function that reads the input file and returns a list of strings
+- get your input and paste it into [`day02_input.txt`](day02_input.txt)
+- [`day02.exs`](day02.exs) has a pre-defined `input` function that reads the input file and returns a list of strings
 
 Here are some things that you might find useful:
 

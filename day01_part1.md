@@ -111,8 +111,8 @@ The `Enum` module is going to be one of your main workhorses.
 ## The puzzle
 
 - sign-in to https://adventofcode.com/
-- get your input and paste it into [`day1_input.txt`](day1_input.txt)
-- [`day1.exs`](day1.exs) has a pre-defined `input` function that reads the input file and returns a list of numbers
+- get your input and paste it into [`day01_input.txt`](day011_input.txt)
+- [`day01.exs`](day01.exs) has a pre-defined `input` function that reads the input file and returns a list of numbers
 
 You can either use this in IEx:
 
