@@ -12,19 +12,19 @@ defmodule Day05 do
     length(left)
   end
 
-  def reduce_polymer(left, <<skip1 :: utf8, tail :: binary>>, skip1, skip2) do
+  def reduce_polymer(left, <<skip1::utf8, tail::binary>>, skip1, skip2) do
     reduce_polymer(left, tail, skip1, skip2)
   end
 
-  def reduce_polymer(left, <<skip2 :: utf8, tail :: binary>>, skip1, skip2) do
+  def reduce_polymer(left, <<skip2::utf8, tail::binary>>, skip1, skip2) do
     reduce_polymer(left, tail, skip1, skip2)
   end
 
-  def reduce_polymer([], <<head :: utf8, tail :: binary>>, skip1, skip2) do
+  def reduce_polymer([], <<head::utf8, tail::binary>>, skip1, skip2) do
     reduce_polymer([head], tail, skip1, skip2)
   end
 
-  def reduce_polymer([left | left_rest], <<right :: utf8, right_rest :: binary>>, skip1, skip2) do
+  def reduce_polymer([left | left_rest], <<right::utf8, right_rest::binary>>, skip1, skip2) do
     if reactive?(left, right) do
       reduce_polymer(left_rest, right_rest, skip1, skip2)
     else
