@@ -92,7 +92,7 @@ defmodule Day06 do
           y <- min_y..max_y,
           do: total_distance({x, y}, coordinates)
 
-    Enum.count(distances, & &1 < 10_000)
+    Enum.count(distances, &(&1 < 10_000))
   end
 
   def total_distance(map_coordinate, coordinates) do
