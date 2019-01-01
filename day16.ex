@@ -102,9 +102,9 @@ defmodule Day16 do
       :gtir,
       :gtri,
       :gtrr,
-      :etir,
-      :etri,
-      :etrr
+      :eqir,
+      :eqri,
+      :eqrr
     ]
   end
 
@@ -150,13 +150,13 @@ defmodule Day16 do
       iex> Day16.execute({10, 20, 30, 40}, {:gtrr, 1, 0, 3})
       {10, 20, 30, 1}
 
-      iex> Day16.execute({10, 20, 30, 40}, {:etir, 10, 0, 3})
+      iex> Day16.execute({10, 20, 30, 40}, {:eqir, 10, 0, 3})
       {10, 20, 30, 1}
 
-      iex> Day16.execute({10, 20, 30, 40}, {:etri, 0, 20, 3})
+      iex> Day16.execute({10, 20, 30, 40}, {:eqri, 0, 20, 3})
       {10, 20, 30, 0}
 
-      iex> Day16.execute({10, 20, 30, 40}, {:etrr, 0, 1, 3})
+      iex> Day16.execute({10, 20, 30, 40}, {:eqrr, 0, 1, 3})
       {10, 20, 30, 0}
   """
   def execute(memory, {opcode, a, b, c}) do
@@ -176,9 +176,9 @@ defmodule Day16 do
       :gtir -> putr(memory, c, to_flag(a > getr(memory, b)))
       :gtri -> putr(memory, c, to_flag(getr(memory, a) > b))
       :gtrr -> putr(memory, c, to_flag(getr(memory, a) > getr(memory, b)))
-      :etir -> putr(memory, c, to_flag(a == getr(memory, b)))
-      :etri -> putr(memory, c, to_flag(getr(memory, a) == b))
-      :etrr -> putr(memory, c, to_flag(getr(memory, a) == getr(memory, b)))
+      :eqir -> putr(memory, c, to_flag(a == getr(memory, b)))
+      :eqri -> putr(memory, c, to_flag(getr(memory, a) == b))
+      :eqrr -> putr(memory, c, to_flag(getr(memory, a) == getr(memory, b)))
     end
   end
 
