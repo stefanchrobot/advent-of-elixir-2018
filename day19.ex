@@ -245,6 +245,7 @@ defmodule Day19 do
           :error ->
             IO.puts("Invalid instruction. Press [Enter] to continue.")
             IO.gets("")
+            debug_program(program, memory)
         end
     end
   end
