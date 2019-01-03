@@ -155,8 +155,10 @@ defmodule Day17 do
     slice
   end
 
-  def dump_slice(slice) do
-    File.write!("day17_output.txt", format_slice(slice))
+  def dump_slice(slice, y \\ 0) do
+    if rem(y, 10) == 0 do
+      File.write!("day17_output.txt", format_slice(slice))
+    end
     slice
   end
 
@@ -440,7 +442,7 @@ defmodule Day17 do
       square_side == :clay ->
         {x, :wall}
 
-      square_side in [:sand, :water_flow] and square_side_below == :sand ->
+      square_side in [:sand, :water_flow] and square_side_below in [:sand, :water_flow] ->
         {x + direction, :edge}
 
       square_side in [:sand, :water_flow] and square_side_below in [:clay, :water_rest] ->
@@ -489,7 +491,7 @@ defmodule Day17 do
   end
 
   def input() do
-    "day17_input.txt"
+    "day17_input_rob.txt"
     |> File.read!()
     |> parse_veins()
     |> build_slice()
